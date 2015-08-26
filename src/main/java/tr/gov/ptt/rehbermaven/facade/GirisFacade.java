@@ -2,6 +2,7 @@ package tr.gov.ptt.rehbermaven.facade;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import tr.gov.ptt.rehbermaven.entity.Giris;
 
@@ -21,11 +22,15 @@ public class GirisFacade extends AbstractFacade<Giris> {
     }
     public boolean girisKontrol(Giris p_giris)
     {
+        try{
+            
+        
         Giris giris=em.createNamedQuery("Giris.girisKontrol",Giris.class).setParameter("kullanici",p_giris.getKullanici()).setParameter("sifre",p_giris.getSifre())
                 .getSingleResult();
-        if (giris !=null) {
-            return true;
-        } else {
+       return true;
+        }
+        catch(NoResultException nre)
+        {
             return false;
         }
         
