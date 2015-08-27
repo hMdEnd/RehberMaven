@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputScript library="js" name="takvimTurkce.js"/>
+        <title>
+            <ui:insert name="sayfaBasligi">
+                Rehber Uygulaması    
+            </ui:insert>    
+        </title>
+    </h:head>
+
+    <h:body>
+
+       
+        
+        <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    <ui:insert name="top">
+                        <table style="width:100%">
+                            <tr>
+                                <td style="width: 30%">
+                                    <p:graphicImage library="resimler"
+                                                    name="ptt2.jpg" 
+                                                    width="120px"
+                                                    />
+                                </td>
+                                <td style="width: 70%" align="center">
+                                    <h2>Rehber Uygulaması</h2>
+                                </td>
+                            </tr>
+                        </table>
+                    </ui:insert>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="60" closable="true" collapsible="true">
+                    <ui:insert name="bottom">
+                        <center><h6>Copyright@2015</h6></center>
+                    </ui:insert>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="180" collapsible="true">
+                   
+                    <ui:insert name="left" >
+                    
+                        <p:panelMenu style="width: 100%">
+                            <p:submenu label="Kişi" >
+                                <p:menuitem value="Ekle"  url="kisiEkle.xhtml?faces-redirect=true" icon="ui-icon-plus"/>
+                                <p:menuitem value="Kişi Listele" url="kisiListele.xhtml?faces-redirect=true" icon="ui-icon-script"/>
+                    
+                            </p:submenu>
+                            
+                             <p:submenu label="Giriş-Çıkış">
+                                
+                                <p:menuitem value="Giriş"  url="Giriş.xhtml?faces-redirect=true" icon="ui-icon-check"/>
+                                <p:menuitem value="Güvenli Çıkış"  url="#{girisBean.guvenliCikis}" icon="ui-icon-close"/>
+                                
+                            </p:submenu>
+                            
+                            
+                            
+                            <p:submenu label="Deneme" rendered="false"/>
+                        </p:panelMenu>
+                        
+                   </ui:insert>     
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                     <ui:insert name="content">Content</ui:insert>
+                </p:layoutUnit>
+
+            </p:layout>
+        
+        
+        
+
+    </h:body>
+
+</html>
