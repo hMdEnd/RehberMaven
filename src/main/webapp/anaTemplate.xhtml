@@ -16,7 +16,8 @@
     </h:head>
 
     <h:body>
-
+        <h:form>
+            
        
         
         <p:layout fullPage="true">
@@ -59,7 +60,7 @@
                              <p:submenu label="Giriş-Çıkış">
                                 
                                 <p:menuitem value="Giriş"  url="Giriş.xhtml?faces-redirect=true" icon="ui-icon-check"/>
-                                <p:menuitem value="Güvenli Çıkış"  url="#{girisBean.guvenliCikis}" icon="ui-icon-close"/>
+                                <p:menuitem value="Güvenli Çıkış"  action="#{girisBean.guvenliCikis}" icon="ui-icon-close"/>
                                 
                             </p:submenu>
                             
@@ -79,6 +80,7 @@
         
         
         
+        </h:form>
 
     </h:body>
 

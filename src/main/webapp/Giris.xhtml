@@ -10,7 +10,7 @@
     <h:body>
         <h:form id="girisForm">
             
-            <p:messages id="toplumsg" />
+            <p:growl id="TopluMsg" showDetail="true"/>
             <p:panelGrid columns="3">
                 
                 <f:facet name="header">
@@ -23,7 +23,7 @@
                              value="#{girisBean.giris.kullanici}"
                              required="true"
                              requiredMessage="Ad Alanı Boş Geçilemez">
-                    <p:ajax event="keyup" update="kullaniciMsg,toplumsg"/>
+                    <p:ajax event="keyup" update="kullaniciMsg,TopluMsg"/>
                 
                 </p:inputText>
                 <p:message id="kullaniciMsg" for="kullanici"/>
@@ -34,10 +34,10 @@
                              label="Şifre"
                              value="#{girisBean.giris.sifre}"
                              required="true"
-                             requiredMessage="Şifre Alanı Boş Geçilemez"/>
-                    <p:ajax event="keyup" update="sifreMsg,toplumsg"/>
+                             requiredMessage="Şifre Alanı Boş Geçilemez">
+                    <p:ajax event="keyup" update="sifreMsg,TopluMsg"/>
                 
-                </p:password>>
+                </p:password>
                 <p:message id="sifreMsg" for="sifre"/>
                 
                 <p:outputLabel value=""/>
@@ -46,14 +46,8 @@
                                  action="#{girisBean.giriseYetkilimi(p_giris)}"
                                  update="girisForm"/>
                 <p:outputLabel value=""/>
-                                 
-                
-                
-                
-                
-                
-                
-            </p:panelGrid>
+     
+                    </p:panelGrid>
             
             
             
